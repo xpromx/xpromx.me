@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-
+import { Navbar } from "../Navbar";
 interface LayoutProps {
   title: string;
   description?: string;
@@ -8,7 +8,7 @@ interface LayoutProps {
 export const Wrapper: FC = ({ children }) => (
   <div
     style={{
-      minHeight: "500px"
+      minHeight: "500px",
     }}
   >
     {children}
@@ -17,12 +17,8 @@ export const Wrapper: FC = ({ children }) => (
 
 export const Main: FC<{ className?: string }> = ({
   children,
-  className = ""
-}) => (
-  <div className={`py-4 px-4 md:px-8 ${className}`}>
-    {children}
-  </div>
-);
+  className = "",
+}) => <div className={`py-4 px-4 md:px-8 ${className}`}>{children}</div>;
 
 interface LayoutComponents {
   Main: typeof Main;
@@ -31,13 +27,12 @@ interface LayoutComponents {
 const Layout: LayoutComponents & FC<LayoutProps> = ({
   children,
   title,
-  description
+  description,
 }) => {
- 
   return (
     <>
       {/* <Head title={title} description={description} /> */}
-      {/* <Navbar /> */}
+      <Navbar />
       <Wrapper>{children}</Wrapper>
     </>
   );
