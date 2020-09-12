@@ -22,7 +22,12 @@
       "noFallthroughCasesInSwitch": true,
       "allowSyntheticDefaultImports": true,
       "rootDirs": ["src"],
-      "isolatedModules": true
+      "isolatedModules": true,
+      "baseUrl": ".",
+      "paths": {
+        "@components": ["src/components/index.ts"],
+        "@components/*": ["src/components/*"],
+      }
     },
     "exclude": [
       "node_modules",
