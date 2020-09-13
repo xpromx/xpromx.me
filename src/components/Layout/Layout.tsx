@@ -1,8 +1,10 @@
 import React, { FC } from "react";
+import Head from "./Head";
 import { Navbar } from "../Navbar";
 interface LayoutProps {
   title: string;
   description?: string;
+  image?: string;
 }
 
 export const Wrapper: FC = ({ children }) => (
@@ -27,11 +29,12 @@ interface LayoutComponents {
 const Layout: LayoutComponents & FC<LayoutProps> = ({
   children,
   title,
+  image,
   description,
 }) => {
   return (
     <>
-      {/* <Head title={title} description={description} /> */}
+      <Head title={title} description={description} image={image} />
       <Navbar />
       <Wrapper>{children}</Wrapper>
     </>
