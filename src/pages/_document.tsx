@@ -1,10 +1,11 @@
 import React from "react";
 import Document, { Html, Head, Main, NextScript } from "next/document";
 import { FavIcon } from "@components/FavIcon";
+import { DEFAULT_LOCALE } from "src/constants";
 export default class MyDocument extends Document {
   render() {
     return (
-      <Html lang="en">
+      <Html lang={DEFAULT_LOCALE}>
         <Head>
           <FavIcon />
         </Head>
