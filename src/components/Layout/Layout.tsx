@@ -9,11 +9,14 @@ interface LayoutProps {
 
 export const Wrapper: FC = ({ children }) => (
   <div
+    className="dark h-screen"
     style={{
       minHeight: "500px",
     }}
   >
-    {children}
+    <div className="h-screen bg-white text-black dark:bg-black dark:text-white">
+      {children}
+    </div>
   </div>
 );
 
@@ -35,8 +38,10 @@ const Layout: LayoutComponents & FC<LayoutProps> = ({
   return (
     <>
       <Head title={title} description={description} image={image} />
-      <Navbar />
-      <Wrapper>{children}</Wrapper>
+      <Wrapper>
+        <Navbar />
+        {children}
+      </Wrapper>
     </>
   );
 };

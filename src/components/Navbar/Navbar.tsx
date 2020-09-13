@@ -11,7 +11,7 @@ const NavItem: FC = ({ children }) => {
 
 export const Navbar = () => {
   return (
-    <div className="flex justify-between p-4 border-b">
+    <div className="flex justify-between p-4 border-b dark:border-gray-100">
       <div className="w-64">
         <a href="#">
           <LogoLarge />
