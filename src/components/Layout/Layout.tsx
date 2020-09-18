@@ -1,21 +1,28 @@
 import React, { FC } from "react";
 import Head from "./Head";
 import { Navbar } from "../Navbar";
+import { useTheme } from "@helpers/ThemeContext";
 interface LayoutProps {
   title: string;
   description?: string;
   image?: string;
 }
 
-export const Wrapper: FC = ({ children }) => (
-  <div
-    style={{
-      minHeight: "500px",
-    }}
-  >
-    {children}
-  </div>
-);
+export const Wrapper: FC = ({ children }) => {
+  const { darkMode } = useTheme();
+  return (
+    <div
+      className={`${darkMode ? "dark" : ""} h-screen`}
+      style={{
+        minHeight: "500px",
+      }}
+    >
+      <div className="h-screen bg-white text-black dark:bg-black dark:text-white">
+        {children}
+      </div>
+    </div>
+  );
+};
 
 export const Main: FC<{ className?: string }> = ({
   children,
@@ -35,8 +42,10 @@ const Layout: LayoutComponents & FC<LayoutProps> = ({
   return (
     <>
       <Head title={title} description={description} image={image} />
-      <Navbar />
-      <Wrapper>{children}</Wrapper>
+      <Wrapper>
+        <Navbar />
+        {children}
+      </Wrapper>
     </>
   );
 };
