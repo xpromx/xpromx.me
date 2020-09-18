@@ -1,8 +1,11 @@
+import { useTheme } from "@helpers/ThemeContext";
 import React, { FC } from "react";
 import { LogoLarge } from "../Logo";
 
-const Nav: FC = ({ children }) => {
-  return <ul className="flex items-center h-full">{children}</ul>;
+const Nav: FC<{ className: string }> = ({ children, className }) => {
+  return (
+    <ul className={`flex items-center h-full ${className}`}>{children}</ul>
+  );
 };
 
 const NavItem: FC = ({ children }) => {
@@ -10,6 +13,7 @@ const NavItem: FC = ({ children }) => {
 };
 
 export const Navbar = () => {
+  const { darkMode, setDarkMode } = useTheme();
   return (
     <div className="flex justify-between p-4 border-b dark:border-gray-100">
       <div className="w-64">
@@ -33,7 +37,15 @@ export const Navbar = () => {
           </NavItem>
         </Nav>
       </div>
-      <div className="w-64 text-right">...</div>
+      <div className="w-64 text-right">
+        <Nav className="flex-row-reverse">
+          <NavItem>
+            <button onClick={() => setDarkMode(!darkMode)}>
+              {darkMode ? "White" : "Dark"}
+            </button>
+          </NavItem>
+        </Nav>
+      </div>
     </div>
   );
 };
