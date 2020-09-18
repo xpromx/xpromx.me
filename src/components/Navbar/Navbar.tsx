@@ -3,7 +3,7 @@ import { useTheme } from "@helpers/ThemeContext";
 import React, { FC } from "react";
 import { LogoLarge } from "../Logo";
 
-const Nav: FC<{ className: string }> = ({ children, className }) => {
+const Nav: FC<{ className?: string }> = ({ children, className = "" }) => {
   return (
     <ul className={`flex items-center h-full ${className}`}>{children}</ul>
   );
