@@ -11,6 +11,10 @@ module.exports = {
   ],
   dark: "class",
   theme: {},
+  variants: {
+    padding: ({ after }) => after(["last", "first"]),
+    margin: ({ after }) => after(["last", "first"]),
+  },
   experimental: {
     darkModeVariant: true,
   },

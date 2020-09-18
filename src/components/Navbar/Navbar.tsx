@@ -1,3 +1,4 @@
+import { Icon } from "@components/Icon";
 import { useTheme } from "@helpers/ThemeContext";
 import React, { FC } from "react";
 import { LogoLarge } from "../Logo";
@@ -9,7 +10,11 @@ const Nav: FC<{ className: string }> = ({ children, className }) => {
 };
 
 const NavItem: FC = ({ children }) => {
-  return <li className="px-4 hover:underline text-lg">{children}</li>;
+  return (
+    <li className="px-4 hover:underline text-lg last:pr-0 first:pl-0">
+      {children}
+    </li>
+  );
 };
 
 export const Navbar = () => {
@@ -40,8 +45,11 @@ export const Navbar = () => {
       <div className="w-64 text-right">
         <Nav className="flex-row-reverse">
           <NavItem>
-            <button onClick={() => setDarkMode(!darkMode)}>
-              {darkMode ? "White" : "Dark"}
+            <button
+              className="outline-none focus:outline-none flex items-center"
+              onClick={() => setDarkMode(!darkMode)}
+            >
+              {darkMode ? <Icon icon="lightMode" /> : <Icon icon="darkMode" />}
             </button>
           </NavItem>
         </Nav>
