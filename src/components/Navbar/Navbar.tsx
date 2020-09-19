@@ -49,7 +49,7 @@ export const Navbar = () => {
               className="outline-none focus:outline-none flex items-center"
               onClick={() => setDarkMode(!darkMode)}
             >
-              {darkMode ? <Icon icon="lightMode" /> : <Icon icon="darkMode" />}
+              <Icon icon={darkMode ? "lightMode" : "darkMode"} size="sm" />
             </button>
           </NavItem>
         </Nav>
