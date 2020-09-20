@@ -1,8 +1,13 @@
-import React from "react";
+import React, { FC } from "react";
 
-export const DarkMode = () => {
+interface IconProps {
+  className?: string;
+}
+
+export const DarkMode: FC<IconProps> = ({ className }) => {
   return (
     <svg
+      className={className}
       xmlns="http://www.w3.org/2000/svg"
       width="23"
       height="24"
