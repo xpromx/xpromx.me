@@ -19,17 +19,22 @@ export const ThemeContext = createContext<ContextProps>({
 export const ThemeProvider: FC = ({ children }) => {
   const [darkMode, setDarkMode] = useState(false);
 
+  const setThemeDarkMode = (darkMode: boolean) => {
+    document.body.style.backgroundColor = darkMode ? "#000" : "#FFF";
+    setDarkMode(darkMode);
+  };
+
   useEffect(() => {
     const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)")
       .matches;
-    setDarkMode(isDarkMode);
+    setThemeDarkMode(isDarkMode);
   }, []);
 
   return (
     <ThemeContext.Provider
       value={{
         darkMode,
-        setDarkMode,
+        setDarkMode: setThemeDarkMode,
       }}
     >
       {children}
