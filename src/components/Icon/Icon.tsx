@@ -5,7 +5,7 @@ import { Email } from "./icons/Email";
 import { GitHub } from "./icons/Github";
 import { LightMode } from "./icons/LightMode";
 import { Linkedin } from "./icons/Linkedin";
-import { NodeJS } from "./icons/NodeJs";
+import { NodeJS } from "./icons/NodeJS";
 import { Php } from "./icons/Php";
 import { ReactIcon } from "./icons/React";
 import { Twitter } from "./icons/Twitter";
