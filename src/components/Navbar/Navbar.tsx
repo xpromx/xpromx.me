@@ -1,6 +1,7 @@
-import { Icon } from "@components/Icon";
+import { Icon } from "@components";
 import { useTheme } from "@helpers/ThemeContext";
 import React, { FC } from "react";
+import Link from "next/link";
 import { LogoLarge } from "../Logo";
 
 const Nav: FC<{ className?: string }> = ({ children, className = "" }) => {
@@ -23,9 +24,11 @@ export const Navbar = () => {
     <div className="flex flex-wrap md:flex-no-wrap justify-between md:border-b dark:border-gray-100">
       {/* Left */}
       <div className="w-1/2 md:w-64 p-4">
-        <a href="#">
-          <LogoLarge />
-        </a>
+        <Link href="/">
+          <a>
+            <LogoLarge />
+          </a>
+        </Link>
       </div>
 
       {/* Right */}
@@ -46,16 +49,24 @@ export const Navbar = () => {
       <div className="w-full justify-center flex bg-gray-200 dark:bg-gray-800 md:bg-transparent md:dark:bg-transparent py-2 px-4">
         <Nav>
           <NavItem>
-            <a href="#">About Me</a>
+            <Link href="/about">
+              <a>About Me</a>
+            </Link>
           </NavItem>
           <NavItem>
-            <a href="#">Blog</a>
+            <Link href="/blog">
+              <a>Blog</a>
+            </Link>
           </NavItem>
           <NavItem>
-            <a href="#">Uses</a>
+            <Link href="/uses">
+              <a>Uses</a>
+            </Link>
           </NavItem>
           <NavItem>
-            <a href="#">Contact</a>
+            <Link href="/contact">
+              <a>Contact</a>
+            </Link>
           </NavItem>
         </Nav>
       </div>
