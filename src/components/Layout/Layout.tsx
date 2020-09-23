@@ -27,7 +27,9 @@ export const Wrapper: FC = ({ children }) => {
 export const Main: FC<{ className?: string }> = ({
   children,
   className = "",
-}) => <div className={`py-4 px-4 md:px-8 ${className}`}>{children}</div>;
+}) => (
+  <div className={`py-4 px-8 max-w-3xl mx-auto ${className}`}>{children}</div>
+);
 
 interface LayoutComponents {
   Main: typeof Main;
