@@ -6,7 +6,7 @@ import Link from "next/link";
 const Page = () => {
   return (
     <Layout title="Home">
-      <Layout.Main>
+      <Layout.Main className="flex md:h-screen md:-mt-20">
         <div className="flex-wrap md:flex items-center my-10 md:my-20">
           <div className="w-full md:w-1/2">
             <LogoName className="w-full" />
