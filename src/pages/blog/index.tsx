@@ -7,6 +7,9 @@ interface PageProps {
 }
 
 const Page: FC<PageProps> = ({ posts }) => {
+  if (!posts) {
+    return <Layout.Loading title="Blog" />;
+  }
   return (
     <Layout title="Blog">
       <Layout.Main>

@@ -2,6 +2,7 @@ import React, { FC } from "react";
 import Head from "./Head";
 import { Navbar } from "../Navbar";
 import { useTheme } from "@helpers/ThemeContext";
+import { Spinner } from "@components/Spinner";
 interface LayoutProps {
   title: string;
   description?: string;
@@ -24,6 +25,24 @@ export const Wrapper: FC = ({ children }) => {
   );
 };
 
+interface LoadingProps {
+  className?: string;
+  title?: string;
+}
+
+export const Loading: FC<LoadingProps> = ({ title, children, className }) => {
+  return (
+    <Layout title={title || "Loading"}>
+      <Main>
+        <div className="text-center">
+          <Spinner className={className} />
+        </div>
+        {children}
+      </Main>
+    </Layout>
+  );
+};
+
 export const Main: FC<{ className?: string }> = ({
   children,
   className = "",
@@ -33,6 +52,7 @@ export const Main: FC<{ className?: string }> = ({
 
 interface LayoutComponents {
   Main: typeof Main;
+  Loading: typeof Loading;
 }
 
 const Layout: LayoutComponents & FC<LayoutProps> = ({
@@ -53,5 +73,6 @@ const Layout: LayoutComponents & FC<LayoutProps> = ({
 };
 
 Layout.Main = Main;
+Layout.Loading = Loading;
 
 export default Layout;
