@@ -38,6 +38,7 @@ export const getStaticProps = async ({ params }: Params) => {
     props: {
       post: await getPostBySlug(params?.slug),
     },
+    revalidate: 1,
   };
 };
 
