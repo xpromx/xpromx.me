@@ -5,3 +5,4 @@ export * from "./Button";
 export * from "./Title";
 export * from "./Post";
 export * from "./Spinner";
+export * from "./Paragraph";
