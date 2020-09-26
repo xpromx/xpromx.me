@@ -28,7 +28,7 @@ export const Main: FC<{ className?: string }> = ({
   children,
   className = "",
 }) => (
-  <div className={`py-4 px-8 max-w-3xl mx-auto ${className}`}>{children}</div>
+  <div className={`py-20 px-8 max-w-3xl mx-auto ${className}`}>{children}</div>
 );
 
 interface LayoutComponents {
