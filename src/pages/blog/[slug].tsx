@@ -18,7 +18,7 @@ const Page: FC<PageProps> = ({ post }) => {
         <div className="text-gray-600 text-sm uppercase mb-2">
           {post.category}
         </div>
-        <Title className="lg:text-4xl">{post.title}</Title>
+        <Title className="text-4xl">{post.title}</Title>
         <div className="blog-post">
           {post.blocks && <NotionRenderer blockMap={post.blocks} />}
         </div>
