@@ -34,15 +34,9 @@ pre[class*="language-"] {
 
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
-    background: #000; 
+    background: #1f1f1f; 
 }
 
-@media (prefers-color-scheme: dark) {
-    .dark :not(pre) > code[class*="language-"],
-    .dark pre[class*="language-"] {
-        background: #1f1f1f; 
-    }
-}
 
 /* Inline code */
 :not(pre) > code[class*="language-"] {
