@@ -8,3 +8,6 @@ export const GITHUB = "https://github.com/xpromx";
 export const TWITTER = "https://twitter.com/xpromx";
 export const LINKEDIN = "https://www.linkedin.com/in/jrramirez/";
 export const EMAIL = "xpromx@gmail.com";
+
+// NOTION
+export const NOTION_BLOG_ID = process.env.BLOG_INDEX_ID || "";
