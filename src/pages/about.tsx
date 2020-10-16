@@ -7,7 +7,7 @@ const Page: FC = () => {
       <Layout.Main>
         <Title>About</Title>
 
-        <Subtitle className="mt-20">Who I am?</Subtitle>
+        <Subtitle className="mt-20">Who am I?</Subtitle>
         <Paragraph>
           I am Rodrigo Ramirez, a Full-Stack developer, and entrepreneur. I am
           from Argentina, and I have been living in Tokyo, Japan since 2018.
