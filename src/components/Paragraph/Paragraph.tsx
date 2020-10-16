@@ -16,7 +16,8 @@ export const Paragraph: FC<Props> = ({
   ...props
 }) => {
   const classes = classNames("max-w-screen-lg m-0", className, {
-    "leading-normal text-gray-700 dark:text-white": variant === "styled",
+    "font-normal leading-normal text-gray-800 dark:text-gray-400":
+      variant === "styled",
     "m-auto text-center": centered,
     "text-lg md:text-xl": !className.includes("text-"),
   });
