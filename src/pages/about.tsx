@@ -51,7 +51,7 @@ const Page: FC = () => {
         <Subtitle className="mt-10">Who am I?</Subtitle>
         <Paragraph>
           My name is Rodrigo Ramirez, I'm a Full-stack developer, entrepreneur,
-          and Argentinian. I have been living in Tokyo, Japan since 2018.
+          and Argentinian. I have been living in Tokyo, Japan since 2014.
         </Paragraph>
 
         <Subtitle className="mt-20">What can I do?</Subtitle>
