@@ -19,10 +19,12 @@ const Item: FC<ItemProps> = ({ children, icon, href }) => {
     <a
       href={href}
       target="blank"
-      className="rounded-md mr-10 mb-8 flex items-center text-lg"
+      className="rounded-md mr-4 sm:mr-10 mb-8 flex items-center text-lg"
     >
-      <Icon icon={icon} className="mr-2" size="md" />
-      <div className="text-gray-700 dark:text-gray-500">{children}</div>
+      <Icon icon={icon} className="sm:mr-2" size="md" />
+      <div className="text-gray-700 dark:text-gray-500 hidden sm:block">
+        {children}
+      </div>
     </a>
   );
 };
