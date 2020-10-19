@@ -12,7 +12,7 @@ const Nav: FC<{ className?: string }> = ({ children, className = "" }) => {
 
 const NavItem: FC = ({ children }) => {
   return (
-    <li className="px-4 hover:underline text-base md:text-lg last:pr-0 first:pl-0">
+    <li className="px-3 sm:px-4 hover:underline text-base md:text-lg last:pr-0 first:pl-0">
       {children}
     </li>
   );
