@@ -5,7 +5,6 @@ import {
   Layout,
   Paragraph,
   Subtitle,
-  Timezone,
   Title,
 } from "@components";
 import Link from "next/link";
