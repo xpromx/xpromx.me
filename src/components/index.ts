@@ -1,4 +1,3 @@
-export * from "./Layout";
 export * from "./Logo";
 export * from "./Icon";
 export * from "./Button";
@@ -7,3 +6,5 @@ export * from "./Post";
 export * from "./Spinner";
 export * from "./Paragraph";
 export * from "./Timezone";
+export * from "./Head";
+export * from "./Loading";

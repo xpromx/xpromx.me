@@ -28,6 +28,7 @@
         "@components": ["src/components/index.ts"],
         "@components/*": ["src/components/*"],
         "@helpers/*": ["src/helpers/*"],
+        "@constants": ["src/constants.ts"],
       }
     },
     "exclude": [

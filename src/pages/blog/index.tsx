@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { Layout, Post, Title } from "@components";
+import { Head, Loading, Post, Title } from "@components";
 import { getAllPosts, PostType } from "@helpers/notion";
 
 interface PageProps {
@@ -8,17 +8,16 @@ interface PageProps {
 
 const Page: FC<PageProps> = ({ posts }) => {
   if (!posts) {
-    return <Layout.Loading title="Blog" />;
+    return <Loading />;
   }
   return (
-    <Layout title="Blog">
-      <Layout.Main>
-        <Title>Blog</Title>
-        {posts.map(
-          (post) => post.published && <Post key={post.slug} {...post} />
-        )}
-      </Layout.Main>
-    </Layout>
+    <>
+      <Head title="Blog" />
+      <Title>Blog</Title>
+      {posts.map(
+        (post) => post.published && <Post key={post.slug} {...post} />
+      )}
+    </>
   );
 };
 
