@@ -1,78 +1,19 @@
+import { Navbar } from "@components/Navbar";
 import React, { FC } from "react";
-import Head from "./Head";
-import { Navbar } from "../Navbar";
-import { useTheme } from "@helpers/ThemeContext";
-import { Spinner } from "@components/Spinner";
-interface LayoutProps {
-  title: string;
-  description?: string;
-  image?: string;
-}
+import { Wrapper } from "./styles";
 
-export const Wrapper: FC = ({ children }) => {
-  const { darkMode } = useTheme();
-  return (
-    <div
-      className={`${darkMode ? "dark" : ""} h-screen`}
-      style={{
-        minHeight: "500px",
-      }}
-    >
-      <div className="h-screen bg-white text-black dark:bg-black dark:text-white">
-        {children}
-      </div>
-    </div>
-  );
-};
-
-interface LoadingProps {
-  className?: string;
-  title?: string;
-}
-
-export const Loading: FC<LoadingProps> = ({ title, children, className }) => {
-  return (
-    <Layout title={title || "Loading"}>
-      <Main>
-        <div className="text-center">
-          <Spinner className={className} />
-        </div>
-        {children}
-      </Main>
-    </Layout>
-  );
-};
-
-export const Main: FC<{ className?: string }> = ({
-  children,
-  className = "",
-}) => (
-  <div className={`py-20 px-8 max-w-3xl mx-auto ${className}`}>{children}</div>
+export const DefaultLayout: FC = ({ children }) => (
+  <Wrapper>
+    <Navbar />
+    <div className="py-20 px-8 max-w-3xl mx-auto">{children}</div>
+  </Wrapper>
 );
 
-interface LayoutComponents {
-  Main: typeof Main;
-  Loading: typeof Loading;
-}
-
-const Layout: LayoutComponents & FC<LayoutProps> = ({
-  children,
-  title,
-  image,
-  description,
-}) => {
-  return (
-    <>
-      <Head title={title} description={description} image={image} />
-      <Wrapper>
-        <Navbar />
-        {children}
-      </Wrapper>
-    </>
-  );
-};
-
-Layout.Main = Main;
-Layout.Loading = Loading;
-
-export default Layout;
+export const HomeLayout: FC = ({ children }) => (
+  <Wrapper>
+    <Navbar />
+    <div className="py-20 px-8 max-w-3xl mx-auto flex md:h-screen md:-mt-20">
+      {children}
+    </div>
+  </Wrapper>
+);
