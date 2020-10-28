@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { Icon, Layout, Paragraph, Title } from "@components";
+import { Head, Icon, Paragraph, Title } from "@components";
 
 const Category: FC = ({ children }) => (
   <h2 className="text-2xl underline mb-10 mt-20 font-medium">{children}</h2>
@@ -194,71 +194,70 @@ const marketing = [
   },
 ];
 
-const Page: FC = () => {
+const Page = () => {
   return (
-    <Layout title="Uses">
-      <Layout.Main>
-        <Title>Uses</Title>
-        <Paragraph>
-          What I use at work on a day to day basis, changes from time to time
-          but I’ll try to keep this up to date.
-        </Paragraph>
+    <>
+      <Head title="Uses" />
+      <Title>Uses</Title>
+      <Paragraph>
+        What I use at work on a day to day basis, changes from time to time but
+        I’ll try to keep this up to date.
+      </Paragraph>
 
-        {/* Backend */}
-        <Category>Backend</Category>
-        {backend.map((item) => (
-          <Item key={item.title} {...item} />
-        ))}
+      {/* Backend */}
+      <Category>Backend</Category>
+      {backend.map((item) => (
+        <Item key={item.title} {...item} />
+      ))}
 
-        {/* Frontend */}
-        <Category>Frontend</Category>
-        {frontend.map((item) => (
-          <Item key={item.title} {...item} />
-        ))}
+      {/* Frontend */}
+      <Category>Frontend</Category>
+      {frontend.map((item) => (
+        <Item key={item.title} {...item} />
+      ))}
 
-        {/* Mobile */}
-        <Category>Mobile</Category>
-        {mobile.map((item) => (
-          <Item key={item.title} {...item} />
-        ))}
+      {/* Mobile */}
+      <Category>Mobile</Category>
+      {mobile.map((item) => (
+        <Item key={item.title} {...item} />
+      ))}
 
-        {/* Databases */}
-        <Category>Databases</Category>
-        {databases.map((item) => (
-          <Item key={item.title} {...item} />
-        ))}
+      {/* Databases */}
+      <Category>Databases</Category>
+      {databases.map((item) => (
+        <Item key={item.title} {...item} />
+      ))}
 
-        {/* DevOps */}
-        <Category>DevOps</Category>
-        {devops.map((item) => (
-          <Item key={item.title} {...item} />
-        ))}
+      {/* DevOps */}
+      <Category>DevOps</Category>
+      {devops.map((item) => (
+        <Item key={item.title} {...item} />
+      ))}
 
-        {/* Development Tools */}
-        <Category>Development Tools</Category>
-        {developmentTools.map((item) => (
-          <Item key={item.title} {...item} />
-        ))}
+      {/* Development Tools */}
+      <Category>Development Tools</Category>
+      {developmentTools.map((item) => (
+        <Item key={item.title} {...item} />
+      ))}
 
-        {/* Design */}
-        <Category>Design</Category>
-        {design.map((item) => (
-          <Item key={item.title} {...item} />
-        ))}
+      {/* Design */}
+      <Category>Design</Category>
+      {design.map((item) => (
+        <Item key={item.title} {...item} />
+      ))}
 
-        {/* Business */}
-        <Category>Business</Category>
-        {business.map((item) => (
-          <Item key={item.title} {...item} />
-        ))}
+      {/* Business */}
+      <Category>Business</Category>
+      {business.map((item) => (
+        <Item key={item.title} {...item} />
+      ))}
 
-        {/* Marketing */}
-        <Category>Marketing</Category>
-        {marketing.map((item) => (
-          <Item key={item.title} {...item} />
-        ))}
-      </Layout.Main>
-    </Layout>
+      {/* Marketing */}
+      <Category>Marketing</Category>
+      {marketing.map((item) => (
+        <Item key={item.title} {...item} />
+      ))}
+    </>
   );
 };
 

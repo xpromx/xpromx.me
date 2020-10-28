@@ -1,12 +1,5 @@
 import React, { FC } from "react";
-import {
-  Icon,
-  IconType,
-  Layout,
-  Paragraph,
-  Subtitle,
-  Title,
-} from "@components";
+import { Head, Icon, IconType, Paragraph, Subtitle, Title } from "@components";
 import Link from "next/link";
 import { GITHUB, LINKEDIN, TWITTER } from "src/constants";
 interface ItemProps {
@@ -29,59 +22,58 @@ const Item: FC<ItemProps> = ({ children, icon, href }) => {
   );
 };
 
-const Page: FC = () => {
+const Page = () => {
   return (
-    <Layout title="About">
-      <Layout.Main>
-        <Title>About</Title>
+    <>
+      <Head title="About" />
+      <Title>About</Title>
 
-        <div className="flex flex-wrap">
-          <Item icon="github" href={GITHUB}>
-            Github
-          </Item>
+      <div className="flex flex-wrap">
+        <Item icon="github" href={GITHUB}>
+          Github
+        </Item>
 
-          <Item icon="twitter" href={TWITTER}>
-            Twitter
-          </Item>
+        <Item icon="twitter" href={TWITTER}>
+          Twitter
+        </Item>
 
-          <Item icon="linkedin" href={LINKEDIN}>
-            Linkedin
-          </Item>
-        </div>
+        <Item icon="linkedin" href={LINKEDIN}>
+          Linkedin
+        </Item>
+      </div>
 
-        <Subtitle className="mt-10">Who am I?</Subtitle>
-        <Paragraph>
-          My name is Rodrigo Ramirez, I'm a Full-stack developer, entrepreneur,
-          and Argentinian. I have been living in Tokyo, Japan since 2014.
-        </Paragraph>
+      <Subtitle className="mt-10">Who am I?</Subtitle>
+      <Paragraph>
+        My name is Rodrigo Ramirez, I'm a Full-stack developer, entrepreneur,
+        and Argentinian. I have been living in Tokyo, Japan since 2014.
+      </Paragraph>
 
-        <Subtitle className="mt-20">What can I do?</Subtitle>
-        <Paragraph>
-          I have experience as a project manager leading different types of
-          projects and team sizes. I use Agile methodology and adapt the process
-          depending on the project and resources available.
-          <br />
-          <br />
-          As a developer, I have more than 7 years of experience with PHP +
-          Laravel. In my last 4 years, I have been working with React + Node.JS.
-          <br />
-          <br />I don't limit myself just as a developer. I am also interested
-          in UI/UX and Marketing. I always try to keep myself updated with the
-          latest trends.
-          <br />
-          <br />
-          One of my strongest points is my broad knowledge of different fields
-          such as Programming, Marketing, Design, Project Management, etc. that
-          allow me to communicate better with different teams in order to
-          achieve the goals.
-        </Paragraph>
-        <Link href="/uses">
-          <a className="text-blue-700 dark:text-blue-400 underline block mt-6">
-            Learn more about the technologies and tools I use →
-          </a>
-        </Link>
-      </Layout.Main>
-    </Layout>
+      <Subtitle className="mt-20">What can I do?</Subtitle>
+      <Paragraph>
+        I have experience as a project manager leading different types of
+        projects and team sizes. I use Agile methodology and adapt the process
+        depending on the project and resources available.
+        <br />
+        <br />
+        As a developer, I have more than 7 years of experience with PHP +
+        Laravel. In my last 4 years, I have been working with React + Node.JS.
+        <br />
+        <br />I don't limit myself just as a developer. I am also interested in
+        UI/UX and Marketing. I always try to keep myself updated with the latest
+        trends.
+        <br />
+        <br />
+        One of my strongest points is my broad knowledge of different fields
+        such as Programming, Marketing, Design, Project Management, etc. that
+        allow me to communicate better with different teams in order to achieve
+        the goals.
+      </Paragraph>
+      <Link href="/uses">
+        <a className="text-blue-700 dark:text-blue-400 underline block mt-6">
+          Learn more about the technologies and tools I use →
+        </a>
+      </Link>
+    </>
   );
 };
 

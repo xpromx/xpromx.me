@@ -1,8 +1,8 @@
 import React, { FC } from "react";
 import {
+  Head,
   Icon,
   IconType,
-  Layout,
   Paragraph,
   Subtitle,
   Timezone,
@@ -28,37 +28,36 @@ const Item: FC<ItemProps> = ({ children, icon, href }) => {
   );
 };
 
-const Page: FC = () => {
+const Page = () => {
   return (
-    <Layout title="Contact">
-      <Layout.Main>
-        <Title>Contact</Title>
-        <Paragraph>
-          Here’s all my contact information on how to reach me.
-        </Paragraph>
+    <>
+      <Head title="Contact" />
+      <Title>Contact</Title>
+      <Paragraph>
+        Here’s all my contact information on how to reach me.
+      </Paragraph>
 
-        <div className="grid sm:grid-cols-2 gap-4 mt-10">
-          <Item icon="github" href={GITHUB}>
-            Github
-          </Item>
+      <div className="grid sm:grid-cols-2 gap-4 mt-10">
+        <Item icon="github" href={GITHUB}>
+          Github
+        </Item>
 
-          <Item icon="twitter" href={TWITTER}>
-            Twitter
-          </Item>
+        <Item icon="twitter" href={TWITTER}>
+          Twitter
+        </Item>
 
-          <Item icon="linkedin" href={LINKEDIN}>
-            Linkedin
-          </Item>
+        <Item icon="linkedin" href={LINKEDIN}>
+          Linkedin
+        </Item>
 
-          <Item icon="email" href={`mailto:${EMAIL}`}>
-            Email
-          </Item>
-        </div>
+        <Item icon="email" href={`mailto:${EMAIL}`}>
+          Email
+        </Item>
+      </div>
 
-        <Subtitle className="mt-20">Timezone</Subtitle>
-        <Timezone />
-      </Layout.Main>
-    </Layout>
+      <Subtitle className="mt-20">Timezone</Subtitle>
+      <Timezone />
+    </>
   );
 };
 
