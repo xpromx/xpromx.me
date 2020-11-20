@@ -44,7 +44,11 @@ export const getStaticProps = async ({ params }: Params) => {
 export async function getStaticPaths() {
   const table = await getAllPosts();
   return {
-    paths: table.map((row) => `/blog/${row.slug}`),
+    paths: table.map((row) => {
+      return {
+        params: { slug: row.slug },
+      };
+    }),
     fallback: true,
   };
 }

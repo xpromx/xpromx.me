@@ -14,9 +14,9 @@ const Page: FC<PageProps> = ({ posts }) => {
     <>
       <Head title="Blog" />
       <Title>Blog</Title>
-      {posts.map(
-        (post) => post.published && <Post key={post.slug} {...post} />
-      )}
+      {posts.map((post) => (
+        <Post key={post.slug} {...post} />
+      ))}
     </>
   );
 };

@@ -13,9 +13,11 @@ export interface PostType {
 }
 
 export const getAllPosts = async (): Promise<PostType[]> => {
-  return await fetch(
+  const posts: PostType[] = await fetch(
     `https://notion-api.splitbee.io/v1/table/${NOTION_BLOG_ID}`
   ).then((res) => res.json());
+
+  return posts.filter((post) => post.published);
 };
 
 export const getPostBlocksById = async (postId: string) => {
@@ -29,7 +31,7 @@ export const getPostBySlug = async (slug: string) => {
   const posts = await getAllPosts();
 
   // Find the current blogpost by slug
-  const post = posts.find((t) => t.slug === slug);
+  const post = posts.find((p) => p.slug === slug);
 
   // fetch post blocks
   const blocks: BlockMapType = await getPostBlocksById(post?.id || "");
