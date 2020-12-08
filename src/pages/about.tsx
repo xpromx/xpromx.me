@@ -73,7 +73,7 @@ const Page: FC = () => {
           One of my strongest points is my broad knowledge of different fields
           such as Programming, Marketing, Design, Project Management, etc. that
           allow me to communicate better with different teams in order to
-          achieve the goals.
+          achieve the company goals.
         </Paragraph>
         <Link href="/uses">
           <a className="text-blue-700 dark:text-blue-400 underline block mt-6">
