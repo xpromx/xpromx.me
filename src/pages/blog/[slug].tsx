@@ -1,13 +1,15 @@
 import React, { FC } from "react";
 import { Layout, Title } from "@components";
-import { getAllPosts, getPostBySlug, PostType } from "@helpers/notion";
-import { NotionRenderer } from "react-notion";
+import { getPageById, getTable, NotionPost } from "@helpers/notion";
+import { BlockMapType, NotionRenderer } from "react-notion";
+import { NOTION_BLOG_ID } from "src/constants";
 
 interface PageProps {
-  post: PostType;
+  post: NotionPost;
+  blockMap: BlockMapType;
 }
 
-const Page: FC<PageProps> = ({ post }) => {
+const Page: FC<PageProps> = ({ post, blockMap }) => {
   if (!post) {
     return <Layout.Loading />;
   }
@@ -20,7 +22,7 @@ const Page: FC<PageProps> = ({ post }) => {
         </div>
         <Title className="text-4xl">{post.title}</Title>
         <div className="blog-post">
-          {post.blocks && <NotionRenderer blockMap={post.blocks} />}
+          {blockMap && <NotionRenderer blockMap={blockMap} />}
         </div>
       </Layout.Main>
     </Layout>
@@ -34,18 +36,23 @@ interface Params {
 }
 
 export const getStaticProps = async ({ params }: Params) => {
+  const posts = await getTable(NOTION_BLOG_ID);
+  const post = posts.find((post) => post.slug === params.slug);
+  const page = post ? await getPageById(post.id) : null;
+
   return {
     props: {
-      post: await getPostBySlug(params?.slug),
+      post: post,
+      blockMap: page?.block,
     },
     revalidate: 1,
   };
 };
 
 export async function getStaticPaths() {
-  const table = await getAllPosts();
+  const posts = await getTable(NOTION_BLOG_ID);
   return {
-    paths: table.map((row) => `/blog/${row.slug}`),
+    paths: posts.map((row) => `/blog/${row.slug}`),
     fallback: true,
   };
 }
