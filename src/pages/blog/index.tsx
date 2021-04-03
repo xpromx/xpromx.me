@@ -1,9 +1,10 @@
 import React, { FC } from "react";
 import { Layout, Post, Title } from "@components";
-import { getAllPosts, PostType } from "@helpers/notion";
+import { getTable, NotionPost } from "@helpers/notion";
+import { NOTION_BLOG_ID } from "src/constants";
 
 interface PageProps {
-  posts: PostType[];
+  posts: NotionPost[];
 }
 
 const Page: FC<PageProps> = ({ posts }) => {
@@ -23,7 +24,7 @@ const Page: FC<PageProps> = ({ posts }) => {
 };
 
 export async function getStaticProps() {
-  const posts = await getAllPosts();
+  const posts = await getTable(NOTION_BLOG_ID);
   return {
     props: {
       posts,
