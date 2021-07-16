@@ -90,7 +90,7 @@ const databases = [
 const devops = [
   {
     title: "Hosting",
-    description: "DigitalOcean, AWS, Laravel Forge, Vercel",
+    description: "DigitalOcean, AWS, GCP, Laravel Forge, Vercel",
   },
   {
     title: "Mailing",
