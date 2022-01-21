@@ -7,3 +7,4 @@ export * from "./Post";
 export * from "./Spinner";
 export * from "./Paragraph";
 export * from "./Timezone";
+export * from "./Bookmark";

@@ -1,6 +1,12 @@
 import { BlockMapType } from "react-notion";
 import { NotionAPI } from "notion-client";
 
+export interface NotionBookmark {
+  title: string;
+  url: string;
+  tags: string[];
+}
+
 export interface NotionPost {
   id: string;
   slug: string;
@@ -20,9 +26,9 @@ export interface NotionPage {
 export const getTable = async <T = NotionPage>(
   pageId: string
 ): Promise<T[]> => {
-  return await fetch(
-    `https://notion-api.splitbee.io/v1/table/${pageId}`
-  ).then((res) => res.json());
+  return await fetch(`https://notion-api.splitbee.io/v1/table/${pageId}`).then(
+    (res) => res.json()
+  );
 };
 
 export const getPageById = async (

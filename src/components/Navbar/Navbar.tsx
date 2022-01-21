@@ -50,12 +50,17 @@ export const Navbar = () => {
         <Nav>
           <NavItem>
             <Link href="/about">
-              <a>About Me</a>
+              <a>About</a>
             </Link>
           </NavItem>
           <NavItem>
             <Link href="/blog">
               <a>Blog</a>
+            </Link>
+          </NavItem>
+          <NavItem>
+            <Link href="/bookmarks">
+              <a>Bookmarks</a>
             </Link>
           </NavItem>
           <NavItem>
