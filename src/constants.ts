@@ -11,4 +11,5 @@ export const LINKEDIN = "https://www.linkedin.com/in/jrramirez/";
 export const EMAIL = "xpromx@gmail.com";
 
 // NOTION
-export const NOTION_BLOG_ID = process.env.BLOG_INDEX_ID || "";
+export const NOTION_BLOG_ID = process.env.NOTION_BLOG_ID || "";
+export const NOTION_BOOKMARK_ID = process.env.NOTION_BOOKMARK_ID || "";
