@@ -54,7 +54,7 @@ const frontend = [
   },
   {
     title: "Styles",
-    description: "TailwindCSS, Styled-Components",
+    description: "CSS Modules, TailwindCSS, Styled-Components",
     icon: <Icon icon="css" className="text-blue-400" />,
   },
 ];
@@ -94,7 +94,7 @@ const devops = [
   },
   {
     title: "Mailing",
-    description: "Mailgun, Amazon SES",
+    description: "Mailgun, Amazon SES, Mailchimp",
   },
   {
     title: "Tools",
@@ -176,6 +176,11 @@ const business = [
     title: "Redash",
     description:
       "Redash helps you make sense of your data, Connect and query your data sources, build dashboards to visualize data and share them with your company.",
+  },
+  {
+    title: "Miro",
+    description:
+      "The online collaborative whiteboard platform to bring teams together, anytime, anywhere.",
   },
 ];
 
