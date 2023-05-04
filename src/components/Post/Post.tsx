@@ -1,14 +1,13 @@
 import React, { FC } from "react";
 import Link from "next/link";
+import { NotionPage } from "@helpers/notion";
 
 interface PostProps {
-  title: string;
-  category: string;
-  slug: string;
-  description: string;
+  fragment: NotionPage
 }
 
-export const Post: FC<PostProps> = ({ title, category, description, slug }) => {
+export const Post = ({ fragment }: PostProps) => {
+  const { title, description, category, slug } = fragment;
   return (
     <Link href={`/blog/${slug}`}>
       <article className="mb-12">

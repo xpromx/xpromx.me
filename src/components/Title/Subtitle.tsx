@@ -1,7 +1,8 @@
-import React, { FC } from "react";
+import React, { FC, ReactNode } from "react";
 
 interface SubtitleProps {
   className?: string;
+  children: ReactNode;
 }
 
 export const Subtitle: FC<SubtitleProps> = ({ children, className }) => {

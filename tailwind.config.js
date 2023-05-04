@@ -1,3 +1,4 @@
+/** @type {import('tailwindcss').Config} */
 const { colors } = require("tailwindcss/defaultTheme");
 
 const gray = {
@@ -13,16 +14,10 @@ const gray = {
 };
 
 module.exports = {
-  future: {
-    removeDeprecatedGapUtilities: true,
-    purgeLayersByDefault: true,
-  },
-  purge: [
-    "./src/components/**/*.tsx",
-    "./src/components/**/*.ts",
-    "./src/pages/**/*.tsx",
-    "./src/pages/**/*.ts",
-    "./src/helpers/**/*.ts",
+  content: [
+    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     colors: {

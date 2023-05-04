@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, ReactNode } from "react";
 import {
   Icon,
   IconType,
@@ -8,10 +8,17 @@ import {
   Title,
 } from "@components";
 import Link from "next/link";
-import { GITHUB, LINKEDIN, TWITTER } from "src/constants";
+import { GITHUB, LINKEDIN, TWITTER } from "../../constants";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About",
+};
+
 interface ItemProps {
   icon: IconType;
   href: string;
+  children: ReactNode;
 }
 
 const Item: FC<ItemProps> = ({ children, icon, href }) => {
@@ -27,9 +34,9 @@ const Item: FC<ItemProps> = ({ children, icon, href }) => {
   );
 };
 
-const Page: FC = () => {
+export default function AboutPage() {
   return (
-    <Layout title="About">
+    <Layout>
       <Layout.Main>
         <Title>About</Title>
 
@@ -80,6 +87,4 @@ const Page: FC = () => {
       </Layout.Main>
     </Layout>
   );
-};
-
-export default Page;
+}

@@ -1,7 +1,12 @@
-import React, { FC } from "react";
+import React, { FC, ReactNode } from "react";
 import { Icon, Layout, Paragraph, Title } from "@components";
+import type { Metadata } from "next";
 
-const Category: FC = ({ children }) => (
+export const metadata: Metadata = {
+  title: "Uses",
+};
+
+const Category: FC<{ children: ReactNode }> = ({ children }) => (
   <h2 className="text-2xl underline mb-10 mt-20 font-medium">{children}</h2>
 );
 
@@ -195,9 +200,9 @@ const marketing = [
   },
 ];
 
-const Page: FC = () => {
+export default function UsesPage() {
   return (
-    <Layout title="Uses">
+    <Layout>
       <Layout.Main>
         <Title>Uses</Title>
         <Paragraph>
@@ -261,6 +266,4 @@ const Page: FC = () => {
       </Layout.Main>
     </Layout>
   );
-};
-
-export default Page;
+}

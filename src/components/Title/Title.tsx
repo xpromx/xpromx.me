@@ -1,7 +1,8 @@
-import React, { FC } from "react";
+import React, { FC, ReactNode } from "react";
 
 interface TitleProps {
   className?: string;
+  children: ReactNode;
 }
 
 export const Title: FC<TitleProps> = ({ children, className }) => {

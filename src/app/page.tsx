@@ -1,11 +1,14 @@
 import React from "react";
 import { Button, Icon, Layout, LogoName } from "@components";
-import { GITHUB, LINKEDIN, TWITTER } from "src/constants";
+import { GITHUB, LINKEDIN, TWITTER } from "../constants";
 import Link from "next/link";
+import type { Metadata } from "next";
 
-const Page = () => {
+export const metadata: Metadata = {};
+
+export default function Home() {
   return (
-    <Layout title="Home">
+    <Layout>
       <Layout.Main className="flex md:h-screen md:-mt-20">
         <div className="flex-wrap md:flex items-center my-10 md:my-20">
           <div className="w-full md:w-1/2">
@@ -50,6 +53,4 @@ const Page = () => {
       </Layout.Main>
     </Layout>
   );
-};
-
-export default Page;
+}

@@ -1,18 +1,23 @@
-import React, { FC } from "react";
+import React, { FC, ReactNode } from "react";
 import {
   Icon,
   IconType,
   Layout,
   Paragraph,
   Subtitle,
-  Timezone,
   Title,
 } from "@components";
-import { EMAIL, GITHUB, LINKEDIN, TWITTER } from "src/constants";
+import { EMAIL, GITHUB, LINKEDIN, TWITTER } from "../../constants";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Contact",
+};
 
 interface ItemProps {
   icon: IconType;
   href: string;
+  children: ReactNode;
 }
 
 const Item: FC<ItemProps> = ({ children, icon, href }) => {
@@ -28,9 +33,9 @@ const Item: FC<ItemProps> = ({ children, icon, href }) => {
   );
 };
 
-const Page: FC = () => {
+export default function ContactPage() {
   return (
-    <Layout title="Contact">
+    <Layout>
       <Layout.Main>
         <Title>Contact</Title>
         <Paragraph>
@@ -54,12 +59,7 @@ const Page: FC = () => {
             Email
           </Item>
         </div>
-
-        <Subtitle className="mt-20">Timezone</Subtitle>
-        <Timezone />
       </Layout.Main>
     </Layout>
   );
-};
-
-export default Page;
+}

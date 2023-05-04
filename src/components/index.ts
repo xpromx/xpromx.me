@@ -6,4 +6,3 @@ export * from "./Title";
 export * from "./Post";
 export * from "./Spinner";
 export * from "./Paragraph";
-export * from "./Timezone";

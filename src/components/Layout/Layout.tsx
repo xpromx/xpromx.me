@@ -1,14 +1,11 @@
-import React, { FC } from "react";
-import Head from "./Head";
+import React, { FC, ReactNode } from "react";
 import { Navbar } from "../Navbar";
 import { Spinner } from "@components/Spinner";
 interface LayoutProps {
-  title: string;
-  description?: string;
-  image?: string;
+  children: ReactNode;
 }
 
-export const Wrapper: FC = ({ children }) => {
+export const Wrapper: FC<{ children: ReactNode }> = ({ children }) => {
   return (
     <div
       className={`h-screen`}
@@ -24,11 +21,12 @@ export const Wrapper: FC = ({ children }) => {
 interface LoadingProps {
   className?: string;
   title?: string;
+  children?: ReactNode;
 }
 
 export const Loading: FC<LoadingProps> = ({ title, children, className }) => {
   return (
-    <Layout title={title || "Loading"}>
+    <Layout>
       <Main>
         <div className="text-center">
           <Spinner className={className} />
@@ -39,7 +37,7 @@ export const Loading: FC<LoadingProps> = ({ title, children, className }) => {
   );
 };
 
-export const Main: FC<{ className?: string }> = ({
+export const Main: FC<{ className?: string; children: ReactNode }> = ({
   children,
   className = "",
 }) => (
@@ -51,15 +49,9 @@ interface LayoutComponents {
   Loading: typeof Loading;
 }
 
-const Layout: LayoutComponents & FC<LayoutProps> = ({
-  children,
-  title,
-  image,
-  description,
-}) => {
+const Layout: LayoutComponents & FC<LayoutProps> = ({ children }) => {
   return (
     <>
-      <Head title={title} description={description} image={image} />
       <Wrapper>
         <Navbar />
         {children}

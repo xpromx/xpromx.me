@@ -1,14 +1,14 @@
-import React, { FC } from "react";
+import React, { FC, ReactNode } from "react";
 import Link from "next/link";
 import { LogoLarge } from "../Logo";
 
-const Nav: FC<{ className?: string }> = ({ children, className = "" }) => {
+const Nav: FC<{ className?: string, children: ReactNode; }> = ({ children, className = "" }) => {
   return (
     <ul className={`flex items-center h-full ${className}`}>{children}</ul>
   );
 };
 
-const NavItem: FC = ({ children }) => {
+const NavItem: FC<{children: ReactNode;}> = ({ children }) => {
   return (
     <li className="px-3 sm:px-4 hover:underline text-base md:text-lg last:pr-0 first:pl-0">
       {children}
