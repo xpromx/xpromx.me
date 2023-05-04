@@ -22,9 +22,7 @@ const Item: FC<ItemProps> = ({ children, icon, href }) => {
       className="rounded-md mr-4 sm:mr-10 mb-8 flex items-center text-lg"
     >
       <Icon icon={icon} className="sm:mr-2" size="md" />
-      <div className="text-gray-700 dark:text-gray-500 hidden sm:block">
-        {children}
-      </div>
+      <div className="text-gray-700 hidden sm:block">{children}</div>
     </a>
   );
 };
@@ -76,10 +74,7 @@ const Page: FC = () => {
           allow me to communicate better with different teams in order to
           achieve the company goals.
         </Paragraph>
-        <Link
-          href="/uses"
-          className="text-blue-700 dark:text-blue-400 underline block mt-6"
-        >
+        <Link href="/uses" className="text-blue-700 underline block mt-6">
           Learn more about the technologies and tools I use →
         </Link>
       </Layout.Main>

@@ -10,7 +10,7 @@ const Page = () => {
         <div className="flex-wrap md:flex items-center my-10 md:my-20">
           <div className="w-full md:w-1/2">
             <LogoName className="w-full" />
-            <h2 className="text-2xl font-light mb-4 text-gray-700 dark:text-gray-500">
+            <h2 className="text-2xl font-light mb-4 text-gray-700">
               Web Developer
             </h2>
             <div className="flex items-center mb-10">

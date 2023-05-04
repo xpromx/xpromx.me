@@ -24,7 +24,6 @@ module.exports = {
     "./src/pages/**/*.ts",
     "./src/helpers/**/*.ts",
   ],
-  dark: "class",
   theme: {
     colors: {
       ...colors,
@@ -34,8 +33,5 @@ module.exports = {
   variants: {
     padding: ({ after }) => after(["last", "first"]),
     margin: ({ after }) => after(["last", "first"]),
-  },
-  experimental: {
-    darkModeVariant: true,
   },
 };

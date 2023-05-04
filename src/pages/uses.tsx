@@ -18,13 +18,9 @@ const Item: FC<ItemProps> = ({ title, description, extra, icon }) => (
     <div>
       <div className="flex items-center">
         <h3 className="font-bold text-xl">{title}</h3>
-        {extra && (
-          <div className="ml-2 text-gray-800 dark:text-gray-300">({extra})</div>
-        )}
+        {extra && <div className="ml-2 text-gray-800">({extra})</div>}
       </div>
-      {description && (
-        <p className="text-gray-800 dark:text-gray-400">{description}</p>
-      )}
+      {description && <p className="text-gray-800">{description}</p>}
     </div>
   </div>
 );

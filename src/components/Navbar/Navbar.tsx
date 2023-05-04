@@ -1,5 +1,3 @@
-import { Icon } from "@components";
-import { useTheme } from "@helpers/ThemeContext";
 import React, { FC } from "react";
 import Link from "next/link";
 import { LogoLarge } from "../Logo";
@@ -19,9 +17,8 @@ const NavItem: FC = ({ children }) => {
 };
 
 export const Navbar = () => {
-  const { darkMode, setDarkMode } = useTheme();
   return (
-    <div className="flex flex-wrap md:flex-no-wrap justify-between md:border-b dark:border-gray-100">
+    <div className="flex flex-wrap md:flex-no-wrap justify-between md:border-b">
       {/* Left */}
       <div className="w-1/2 md:w-64 p-4">
         <Link href="/">
@@ -30,21 +27,10 @@ export const Navbar = () => {
       </div>
 
       {/* Right */}
-      <div className="w-1/2 md:w-64 p-4 text-right md:order-last">
-        <Nav className="flex-row-reverse">
-          <NavItem>
-            <button
-              className="outline-none focus:outline-none flex items-center"
-              onClick={() => setDarkMode(!darkMode)}
-            >
-              <Icon icon={darkMode ? "lightMode" : "darkMode"} size="sm" />
-            </button>
-          </NavItem>
-        </Nav>
-      </div>
+      <div className="w-1/2 md:w-64 p-4 text-right md:order-last"></div>
 
       {/* Menu */}
-      <div className="w-full justify-center flex bg-gray-200 dark:bg-gray-800 md:bg-transparent md:dark:bg-transparent py-2 px-4">
+      <div className="w-full justify-center flex bg-gray-200 md:bg-transparent py-2 px-4">
         <Nav>
           <NavItem>
             <Link href="/about">About Me</Link>

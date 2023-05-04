@@ -1,7 +1,6 @@
 import React, { FC } from "react";
 import Head from "./Head";
 import { Navbar } from "../Navbar";
-import { useTheme } from "@helpers/ThemeContext";
 import { Spinner } from "@components/Spinner";
 interface LayoutProps {
   title: string;
@@ -10,17 +9,14 @@ interface LayoutProps {
 }
 
 export const Wrapper: FC = ({ children }) => {
-  const { darkMode } = useTheme();
   return (
     <div
-      className={`${darkMode ? "dark" : ""} h-screen`}
+      className={`h-screen`}
       style={{
         minHeight: "500px",
       }}
     >
-      <div className="h-screen bg-white text-black dark:bg-black dark:text-white">
-        {children}
-      </div>
+      <div className="h-screen bg-white text-black">{children}</div>
     </div>
   );
 };
