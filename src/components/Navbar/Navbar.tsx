@@ -25,9 +25,7 @@ export const Navbar = () => {
       {/* Left */}
       <div className="w-1/2 md:w-64 p-4">
         <Link href="/">
-          <a>
-            <LogoLarge />
-          </a>
+          <LogoLarge />
         </Link>
       </div>
 
@@ -49,24 +47,16 @@ export const Navbar = () => {
       <div className="w-full justify-center flex bg-gray-200 dark:bg-gray-800 md:bg-transparent md:dark:bg-transparent py-2 px-4">
         <Nav>
           <NavItem>
-            <Link href="/about">
-              <a>About Me</a>
-            </Link>
+            <Link href="/about">About Me</Link>
           </NavItem>
           <NavItem>
-            <Link href="/blog">
-              <a>Blog</a>
-            </Link>
+            <Link href="/blog">Blog</Link>
           </NavItem>
           <NavItem>
-            <Link href="/uses">
-              <a>Uses</a>
-            </Link>
+            <Link href="/uses">Uses</Link>
           </NavItem>
           <NavItem>
-            <Link href="/contact">
-              <a>Contact</a>
-            </Link>
+            <Link href="/contact">Contact</Link>
           </NavItem>
         </Nav>
       </div>

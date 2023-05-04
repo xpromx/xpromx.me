@@ -25,8 +25,9 @@ export const ThemeProvider: FC = ({ children }) => {
   };
 
   useEffect(() => {
-    const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)")
-      .matches;
+    const isDarkMode = window.matchMedia(
+      "(prefers-color-scheme: dark)"
+    ).matches;
     setThemeDarkMode(isDarkMode);
   }, []);
 

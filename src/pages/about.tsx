@@ -51,8 +51,9 @@ const Page: FC = () => {
 
         <Subtitle className="mt-10">Who am I?</Subtitle>
         <Paragraph>
-          My name is Rodrigo Ramirez, I'm a Full-stack developer, entrepreneur,
-          and Argentinian. I have been living in Tokyo, Japan since 2014.
+          My name is Rodrigo Ramirez, I&apos;m a Full-stack developer,
+          entrepreneur, and Argentinian. I have been living in Tokyo, Japan
+          since 2014.
         </Paragraph>
 
         <Subtitle className="mt-20">What can I do?</Subtitle>
@@ -65,9 +66,9 @@ const Page: FC = () => {
           As a developer, I have more than 7 years of experience with PHP +
           Laravel. In my last 4 years, I have been working with React + Node.JS.
           <br />
-          <br />I don't limit myself just as a developer. I am also interested
-          in UI/UX and Marketing. I always try to keep myself updated with the
-          latest trends.
+          <br />I don&apos;t limit myself just as a developer. I am also
+          interested in UI/UX and Marketing. I always try to keep myself updated
+          with the latest trends.
           <br />
           <br />
           One of my strongest points is my broad knowledge of different fields
@@ -75,10 +76,11 @@ const Page: FC = () => {
           allow me to communicate better with different teams in order to
           achieve the company goals.
         </Paragraph>
-        <Link href="/uses">
-          <a className="text-blue-700 dark:text-blue-400 underline block mt-6">
-            Learn more about the technologies and tools I use →
-          </a>
+        <Link
+          href="/uses"
+          className="text-blue-700 dark:text-blue-400 underline block mt-6"
+        >
+          Learn more about the technologies and tools I use →
         </Link>
       </Layout.Main>
     </Layout>
