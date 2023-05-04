@@ -20,7 +20,7 @@ const Page = () => {
               <img src="/argentina.png" className="mr-4" />
               <img src="/japan.png" />
             </div>
-            <Link href="/contact" passHref>
+            <Link href="/contact" passHref legacyBehavior>
               <Button className="px-10 w-full md:w-auto">{`Let's Chat`}</Button>
             </Link>
           </div>
@@ -41,9 +41,7 @@ const Page = () => {
                 </a>
 
                 <Link href="/contact">
-                  <a>
-                    <Icon icon="email" />
-                  </a>
+                  <Icon icon="email" />
                 </Link>
               </div>
             </div>

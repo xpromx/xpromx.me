@@ -20,9 +20,9 @@ export interface NotionPage {
 export const getTable = async <T = NotionPage>(
   pageId: string
 ): Promise<T[]> => {
-  return await fetch(
-    `https://notion-api.splitbee.io/v1/table/${pageId}`
-  ).then((res) => res.json());
+  return await fetch(`https://notion-api.splitbee.io/v1/table/${pageId}`).then(
+    (res) => res.json()
+  );
 };
 
 export const getPageById = async (

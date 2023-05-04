@@ -13,10 +13,10 @@
   "dependencies": {
     "classnames": "^2.2.6",
     "luxon": "^1.25.0",
-    "next": "9.5.3",
+    "next": "^13.4.0",
     "notion-client": "^4.3.2",
-    "react": "16.13.1",
-    "react-dom": "16.13.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-notion": "^0.8.1"
   },
   "devDependencies": {

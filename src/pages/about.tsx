@@ -75,10 +75,11 @@ const Page: FC = () => {
           allow me to communicate better with different teams in order to
           achieve the company goals.
         </Paragraph>
-        <Link href="/uses">
-          <a className="text-blue-700 dark:text-blue-400 underline block mt-6">
-            Learn more about the technologies and tools I use →
-          </a>
+        <Link
+          href="/uses"
+          className="text-blue-700 dark:text-blue-400 underline block mt-6"
+        >
+          Learn more about the technologies and tools I use →
         </Link>
       </Layout.Main>
     </Layout>
