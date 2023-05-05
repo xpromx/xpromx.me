@@ -9,7 +9,7 @@
 .item {
   margin-bottom: var(--space-6x);
   display: flex;
-  align-content: start;
+  align-items: flex-start;
 }
 
 .itemIcon {
