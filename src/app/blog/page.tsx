@@ -12,17 +12,15 @@ export default async function BlogList() {
   const posts = await getTable(NOTION_BLOG_ID);
 
   if (!posts) {
-    return <Layout.Loading title="Blog" />;
+    return <div>...</div>;
   }
   return (
-    <Layout>
-      <Layout.Main>
-        <Title>Blog</Title>
-        {posts.map(
-          (post) => post.published && <Post key={post.id} fragment={post} />
-        )}
-      </Layout.Main>
-    </Layout>
+    <Layout.Main>
+      <Title>Blog</Title>
+      {posts.map(
+        (post) => post.published && <Post key={post.id} fragment={post} />
+      )}
+    </Layout.Main>
   );
 }
 

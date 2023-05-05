@@ -39,15 +39,13 @@ export default async function BlogDetail({ params }: PageProps) {
   }
 
   return (
-    <Layout>
-      <Layout.Main>
-        <div className={styles.root}>{post.category}</div>
-        <Title>{post.title}</Title>
-        <div className="blog-post">
-          {block && <NotionRenderer blockMap={block as BlockMapType} />}
-        </div>
-      </Layout.Main>
-    </Layout>
+    <Layout.Main>
+      <div className={styles.root}>{post.category}</div>
+      <Title>{post.title}</Title>
+      <div className="blog-post">
+        {block && <NotionRenderer blockMap={block as BlockMapType} />}
+      </div>
+    </Layout.Main>
   );
 }
 

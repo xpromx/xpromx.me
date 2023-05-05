@@ -25,31 +25,29 @@ const Item: FC<ItemProps> = ({ children, icon, href }) => {
 
 export default function ContactPage() {
   return (
-    <Layout>
-      <Layout.Main>
-        <Title>Contact</Title>
-        <Paragraph>
-          Here’s all my contact information on how to reach me.
-        </Paragraph>
+    <Layout.Main>
+      <Title>Contact</Title>
+      <Paragraph>
+        Here’s all my contact information on how to reach me.
+      </Paragraph>
 
-        <div className={styles.items}>
-          <Item icon="github" href={GITHUB}>
-            Github
-          </Item>
+      <div className={styles.items}>
+        <Item icon="github" href={GITHUB}>
+          Github
+        </Item>
 
-          <Item icon="twitter" href={TWITTER}>
-            Twitter
-          </Item>
+        <Item icon="twitter" href={TWITTER}>
+          Twitter
+        </Item>
 
-          <Item icon="linkedin" href={LINKEDIN}>
-            Linkedin
-          </Item>
+        <Item icon="linkedin" href={LINKEDIN}>
+          Linkedin
+        </Item>
 
-          <Item icon="email" href={`mailto:${EMAIL}`}>
-            Email
-          </Item>
-        </div>
-      </Layout.Main>
-    </Layout>
+        <Item icon="email" href={`mailto:${EMAIL}`}>
+          Email
+        </Item>
+      </div>
+    </Layout.Main>
   );
 }

@@ -3,6 +3,7 @@ import "../styles.css";
 import { SITE_DESCRIPTION, SITE_NAME } from "../constants";
 import type { Metadata } from "next";
 import { FavIcon } from "@components/FavIcon";
+import { Layout } from "@components";
 
 export const metadata: Metadata = {
   title: {
@@ -22,7 +23,7 @@ export default function RootLayout({ children }: LayoutProps) {
       <head>
         <FavIcon />
       </head>
-      <body>{children}</body>
+      <Layout>{children}</Layout>
     </html>
   );
 }
