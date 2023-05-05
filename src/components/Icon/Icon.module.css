@@ -1,0 +1,52 @@
+.root {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+  font-size: 0;
+}
+
+/* Size */
+.size--xs {
+  width: 12px;
+  height: 12px;
+}
+.size--sm {
+  width: 16px;
+  height: 16px;
+}
+.size--base {
+  width: 20px;
+  height: 20px;
+}
+.size--md {
+  width: 24px;
+  height: 24px;
+}
+.size--lg {
+  width: 32px;
+  height: 32px;
+}
+.size--xl {
+  width: 48px;
+  height: 48px;
+}
+
+/* Color */
+.color--default {
+  color: var(--color-gray-900);
+}
+.color--nodejs {
+  color: #48bb78;
+}
+.color--react {
+  color: #4299e1;
+}
+.color--php {
+  color: #5a67d8;
+}
+.color--css {
+  color: #f56565;
+}

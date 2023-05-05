@@ -1,14 +1,11 @@
-import React, { FC } from "react";
+import React, { FC, ReactNode } from "react";
+import styles from "./Title.module.css";
 
 interface TitleProps {
   className?: string;
+  children: ReactNode;
 }
 
 export const Title: FC<TitleProps> = ({ children, className }) => {
-  const fontSize = className?.includes("text-") ? "" : "text-4xl lg:text-5xl";
-  return (
-    <h1 className={`leading-snug font-medium mb-10 ${fontSize} ${className}`}>
-      {children}
-    </h1>
-  );
+  return <h1 className={`${styles.root} ${className}`}>{children}</h1>;
 };

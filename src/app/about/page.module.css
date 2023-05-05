@@ -1,0 +1,32 @@
+.social {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--space-10x);
+}
+
+.item {
+  margin-right: var(--space-6x);
+  display: flex;
+  align-items: center;
+}
+
+.itemBody {
+  font-size: var(--fontSize-xl);
+  margin-left: var(--space-2x);
+  color: var(--color-gray-700);
+}
+
+.link {
+  color: var(--color-link);
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 768px) {
+  .item {
+    margin-right: var(--space-3x);
+  }
+
+  .itemBody {
+    display: none;
+  }
+}

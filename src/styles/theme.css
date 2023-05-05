@@ -1,0 +1,65 @@
+:root {
+  /* Colors */
+  --transparent: transparent;
+  --color-black: #000;
+  --color-white: #fff;
+  --color-link: #0070f3;
+  --color-gray-100: hsl(0, 0%, 98%);
+  --color-gray-200: hsl(0, 0%, 96%);
+  --color-gray-300: hsl(0, 0%, 93%);
+  --color-gray-400: hsl(0, 0%, 87%);
+  --color-gray-500: hsl(0, 0%, 66%);
+  --color-gray-600: hsl(0, 0%, 50%);
+  --color-gray-700: hsl(0, 0%, 29%);
+  --color-gray-800: hsl(0, 0%, 20%);
+  --color-gray-900: hsl(0, 0%, 15%);
+
+  /* Spacing */
+  --space-1: 1px;
+  --space-2: 2px;
+  --space: 4px;
+  --space-2x: 8px;
+  --space-3x: 12px;
+  --space-4x: 16px;
+  --space-5x: 20px;
+  --space-6x: 24px;
+  --space-8x: 32px;
+  --space-10x: 40px;
+  --space-12x: 48px;
+  --space-14x: 56px;
+  --space-16x: 64px;
+  --space-20x: 80px;
+  --space-30x: 120px;
+
+  /* Radius */
+  --rounded: 8px;
+  --rounded-xs: 4px;
+  --rounded-md: 16px;
+  --rounded-lg: 24px;
+  --rounded-full: 100%;
+
+  /* Font Size */
+  --fontSize-xs: 10px;
+  --fontSize-sm: 12px;
+  --fontSize-base: 14px;
+  --fontSize-lg: 16px;
+  --fontSize-xl: 18px;
+  --fontSize-2xl: 20px;
+  --fontSize-3xl: 24px;
+  --fontSize-4xl: 28px;
+  --fontSize-5xl: 32px;
+  --fontSize-6xl: 40px;
+
+  /* Font Line Height */
+  --lineHeight-sm: 16px;
+  --lineHeight-base: 20px;
+  --lineHeight-lg: 24px;
+  --lineHeight-xl: 24px;
+  --lineHeight-2xl: 28px;
+  --lineHeight-3xl: 32px;
+  --lineHeight-4xl: 40px;
+  --lineHeight-5xl: 44px;
+
+  /* Letter Spacing */
+  --letter-spacing: 10%;
+}

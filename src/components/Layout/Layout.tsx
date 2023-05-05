@@ -1,26 +1,19 @@
-import React, { FC } from "react";
-import Head from "./Head";
+import React, { FC, ReactNode } from "react";
 import { Navbar } from "../Navbar";
-import { useTheme } from "@helpers/ThemeContext";
-import { Spinner } from "@components/Spinner";
+import styles from "./Layout.module.css";
 interface LayoutProps {
-  title: string;
-  description?: string;
-  image?: string;
+  children: ReactNode;
 }
 
-export const Wrapper: FC = ({ children }) => {
-  const { darkMode } = useTheme();
+export const Wrapper: FC<{ children: ReactNode }> = ({ children }) => {
   return (
     <div
-      className={`${darkMode ? "dark" : ""} h-screen`}
+      className={styles.root}
       style={{
         minHeight: "500px",
       }}
     >
-      <div className="h-screen bg-white text-black dark:bg-black dark:text-white">
-        {children}
-      </div>
+      <div className={styles.container}>{children}</div>
     </div>
   );
 };
@@ -28,42 +21,21 @@ export const Wrapper: FC = ({ children }) => {
 interface LoadingProps {
   className?: string;
   title?: string;
+  children?: ReactNode;
 }
 
-export const Loading: FC<LoadingProps> = ({ title, children, className }) => {
-  return (
-    <Layout title={title || "Loading"}>
-      <Main>
-        <div className="text-center">
-          <Spinner className={className} />
-        </div>
-        {children}
-      </Main>
-    </Layout>
-  );
-};
-
-export const Main: FC<{ className?: string }> = ({
+export const Main: FC<{ className?: string; children: ReactNode }> = ({
   children,
   className = "",
-}) => (
-  <div className={`py-20 px-8 max-w-3xl mx-auto ${className}`}>{children}</div>
-);
+}) => <div className={`${styles.main} ${className}`}>{children}</div>;
 
 interface LayoutComponents {
   Main: typeof Main;
-  Loading: typeof Loading;
 }
 
-const Layout: LayoutComponents & FC<LayoutProps> = ({
-  children,
-  title,
-  image,
-  description,
-}) => {
+const Layout: LayoutComponents & FC<LayoutProps> = ({ children }) => {
   return (
     <>
-      <Head title={title} description={description} image={image} />
       <Wrapper>
         <Navbar />
         {children}
@@ -73,6 +45,5 @@ const Layout: LayoutComponents & FC<LayoutProps> = ({
 };
 
 Layout.Main = Main;
-Layout.Loading = Loading;
 
 export default Layout;

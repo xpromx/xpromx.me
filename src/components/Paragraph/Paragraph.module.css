@@ -1,0 +1,7 @@
+.root {
+  font-size: var(--fontSize-xl);
+  line-height: var(--lineHeight-2xl);
+  margin-bottom: var(--space-10x);
+  font-weight: 00;
+  color: var(--color-gray-800);
+}

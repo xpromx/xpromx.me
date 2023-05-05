@@ -12,9 +12,8 @@ export interface NotionPost {
   published: boolean;
 }
 
-export interface NotionPage {
+export interface NotionPage extends NotionPost {
   id: string;
-  [k: string]: string | number | boolean;
 }
 
 export const getTable = async <T = NotionPage>(

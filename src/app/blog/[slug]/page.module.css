@@ -1,0 +1,5 @@
+.root {
+  color: var(--color-gray-600);
+  font-size: var(--fontSize-base);
+  text-transform: uppercase;
+}
