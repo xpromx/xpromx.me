@@ -3,48 +3,47 @@ import { Button, Icon, Layout, LogoName } from "@components";
 import { GITHUB, LINKEDIN, TWITTER } from "../constants";
 import Link from "next/link";
 import type { Metadata } from "next";
+import styles from "./page.module.css";
 
 export const metadata: Metadata = {};
 
 export default function Home() {
   return (
     <Layout>
-      <Layout.Main className="flex md:h-screen md:-mt-20">
-        <div className="flex-wrap md:flex items-center my-10 md:my-20">
-          <div className="w-full md:w-1/2">
-            <LogoName className="w-full" />
-            <h2 className="text-2xl font-light mb-4 text-gray-700">
-              Web Developer
-            </h2>
-            <div className="flex items-center mb-10">
-              <Icon icon="nodeJS" className="mr-4 text-green-500" />
-              <Icon icon="react" className="mr-4 text-blue-500" />
-              <Icon icon="php" className="mr-4 text-indigo-600" />
-              <img src="/argentina.png" className="mr-4" />
+      <Layout.Main>
+        <div className={styles.root}>
+          <div className={styles.col}>
+            <LogoName />
+            <h2 className={styles.h2}>Web Developer</h2>
+            <div className={styles.stack}>
+              <Icon icon="nodeJS" color="nodejs" size="lg" />
+              <Icon icon="react" color="react" size="lg" />
+              <Icon icon="php" color="php" size="lg" />
+              <img src="/argentina.png" />
               <img src="/japan.png" />
             </div>
             <Link href="/contact" passHref legacyBehavior>
-              <Button className="px-10 w-full md:w-auto">{`Let's Chat`}</Button>
+              <Button className={styles.button}>{`Let's Chat`}</Button>
             </Link>
           </div>
-          <div className="w-full md:w-1/2">
-            <div className="mt-10 md:mt-0 md:ml-10">
-              <img src="/profile.png" className="w-full md:w-auto mx-auto" />
-              <div className="flex items-center justify-center mt-8">
+          <div className={styles.col}>
+            <div className={styles.profile}>
+              <img src="/profile.png" className={styles.avatar} />
+              <div className={styles.social}>
                 <a href={GITHUB} target="_blank" rel="noreferrer">
-                  <Icon icon="github" className="mr-4" />
+                  <Icon icon="github" size="lg" />
                 </a>
 
                 <a href={TWITTER} target="_blank" rel="noreferrer">
-                  <Icon icon="twitter" className="mr-4" />
+                  <Icon icon="twitter" size="lg" />
                 </a>
 
                 <a href={LINKEDIN} target="_blank" rel="noreferrer">
-                  <Icon icon="linkedin" className="mr-4" />
+                  <Icon icon="linkedin" size="lg" />
                 </a>
 
                 <Link href="/contact">
-                  <Icon icon="email" />
+                  <Icon icon="email" size="lg" />
                 </Link>
               </div>
             </div>

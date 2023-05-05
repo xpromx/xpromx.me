@@ -1,0 +1,25 @@
+.items {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-3x);
+  margin-bottom: var(--space-10x);
+}
+
+.item {
+  border: 2px solid var(--color-gray-300);
+  padding: var(--space-4x);
+  display: flex;
+  align-items: center;
+  font-size: var(--fontSize-2xl);
+  border-radius: var(--rounded);
+}
+
+.item svg {
+  margin-right: var(--space-4x);
+}
+
+@media screen and (max-width: 768px) {
+  .items {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

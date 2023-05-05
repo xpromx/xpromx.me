@@ -1,6 +1,6 @@
 import React, { FC, DOMAttributes, HTMLAttributes } from "react";
 import classNames from "classnames";
-
+import styles from "./Paragraph.module.css";
 interface Props
   extends HTMLAttributes<HTMLElement>,
     DOMAttributes<HTMLElement> {
@@ -15,10 +15,8 @@ export const Paragraph: FC<Props> = ({
   variant = "styled",
   ...props
 }) => {
-  const classes = classNames("max-w-screen-lg m-0", className, {
-    "font-normal leading-normal text-gray-800": variant === "styled",
-    "m-auto text-center": centered,
-    "text-lg md:text-xl": !className.includes("text-"),
+  const classes = classNames(styles.root, className, {
+    [styles.centered]: centered,
   });
 
   const lineClasses = classNames({

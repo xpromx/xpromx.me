@@ -1,13 +1,14 @@
 import React, { FC, ReactNode } from "react";
 import { Icon, Layout, Paragraph, Title } from "@components";
 import type { Metadata } from "next";
+import styles from "./page.module.css";
 
 export const metadata: Metadata = {
   title: "Uses",
 };
 
 const Category: FC<{ children: ReactNode }> = ({ children }) => (
-  <h2 className="text-2xl underline mb-10 mt-20 font-medium">{children}</h2>
+  <h2 className={styles.category}>{children}</h2>
 );
 
 interface ItemProps {
@@ -18,14 +19,14 @@ interface ItemProps {
 }
 
 const Item: FC<ItemProps> = ({ title, description, extra, icon }) => (
-  <div className="mb-6 flex content-start">
-    <div className="mr-4 mt-1">{icon || "●"}</div>
+  <div className={styles.item}>
+    <div className={styles.itemIcon}>{icon || "●"}</div>
     <div>
-      <div className="flex items-center">
-        <h3 className="font-bold text-xl">{title}</h3>
-        {extra && <div className="ml-2 text-gray-800">({extra})</div>}
+      <div className={styles.itemBody}>
+        <h3 className={styles.itemTitle}>{title}</h3>
+        {extra && <div className={styles.itemExtra}>({extra})</div>}
       </div>
-      {description && <p className="text-gray-800">{description}</p>}
+      {description && <p className={styles.itemDescription}>{description}</p>}
     </div>
   </div>
 );
@@ -35,13 +36,13 @@ const backend = [
     title: "PHP",
     extra: "+7 years",
     description: "Laravel, Lumen, Docker, PHPUnit",
-    icon: <Icon icon="php" className="text-indigo-600" />,
+    icon: <Icon icon="php" color="php" />,
   },
   {
     title: "Node.JS",
     extra: "+4 years",
     description: "Typescript, GraphQL, Jest, Express",
-    icon: <Icon icon="nodeJS" className="text-green-500" />,
+    icon: <Icon icon="nodeJS" color="nodejs" />,
   },
 ];
 
@@ -51,12 +52,12 @@ const frontend = [
     extra: "+4 years",
     description:
       "Typescript, Apollo GraphQL, Next.JS, Jest, React-testing-library, Cypress",
-    icon: <Icon icon="react" className="text-blue-500" />,
+    icon: <Icon icon="react" color="react" />,
   },
   {
     title: "Styles",
     description: "CSS Modules, TailwindCSS, Styled-Components",
-    icon: <Icon icon="css" className="text-blue-400" />,
+    icon: <Icon icon="css" color="css" />,
   },
 ];
 

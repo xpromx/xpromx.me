@@ -10,6 +10,7 @@ import {
 import Link from "next/link";
 import { GITHUB, LINKEDIN, TWITTER } from "../../constants";
 import type { Metadata } from "next";
+import styles from "./page.module.css";
 
 export const metadata: Metadata = {
   title: "About",
@@ -23,13 +24,9 @@ interface ItemProps {
 
 const Item: FC<ItemProps> = ({ children, icon, href }) => {
   return (
-    <a
-      href={href}
-      target="blank"
-      className="rounded-md mr-4 sm:mr-10 mb-8 flex items-center text-lg"
-    >
-      <Icon icon={icon} className="sm:mr-2" size="md" />
-      <div className="text-gray-700 hidden sm:block">{children}</div>
+    <a href={href} target="blank" className={styles.item}>
+      <Icon icon={icon} size="lg" />
+      <div className={styles.itemBody}>{children}</div>
     </a>
   );
 };
@@ -40,7 +37,7 @@ export default function AboutPage() {
       <Layout.Main>
         <Title>About</Title>
 
-        <div className="flex flex-wrap">
+        <div className={styles.social}>
           <Item icon="github" href={GITHUB}>
             Github
           </Item>
@@ -54,14 +51,14 @@ export default function AboutPage() {
           </Item>
         </div>
 
-        <Subtitle className="mt-10">Who am I?</Subtitle>
+        <Subtitle>Who am I?</Subtitle>
         <Paragraph>
           My name is Rodrigo Ramirez, I&apos;m a Full-stack developer,
           entrepreneur, and Argentinian. I have been living in Tokyo, Japan
           since 2014.
         </Paragraph>
 
-        <Subtitle className="mt-20">What can I do?</Subtitle>
+        <Subtitle>What can I do?</Subtitle>
         <Paragraph>
           I have experience as a project manager leading different types of
           projects and team sizes. I use Agile methodology and adapt the process
@@ -81,7 +78,7 @@ export default function AboutPage() {
           allow me to communicate better with different teams in order to
           achieve the company goals.
         </Paragraph>
-        <Link href="/uses" className="text-blue-700 underline block mt-6">
+        <Link href="/uses" className={styles.link}>
           Learn more about the technologies and tools I use →
         </Link>
       </Layout.Main>

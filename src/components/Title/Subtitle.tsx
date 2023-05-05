@@ -1,15 +1,10 @@
 import React, { FC, ReactNode } from "react";
-
+import styles from "./Subtitle.module.css";
 interface SubtitleProps {
   className?: string;
   children: ReactNode;
 }
 
 export const Subtitle: FC<SubtitleProps> = ({ children, className }) => {
-  const fontSize = className?.includes("text-") ? "" : "text-2xl lg:text-2xl";
-  return (
-    <h3 className={`leading-snug font-medium mb-10 ${fontSize} ${className}`}>
-      {children}
-    </h3>
-  );
+  return <h3 className={`${styles.root} ${className}`}>{children}</h3>;
 };

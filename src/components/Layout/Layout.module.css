@@ -1,0 +1,19 @@
+.root {
+  height: 100vh;
+}
+
+.container {
+  height: 100vh;
+  background: var(--color-white);
+  color: var(--color-black);
+}
+
+.loading {
+  text-align: center;
+}
+
+.main {
+  padding: var(--space-10x) var(--space-6x);
+  max-width: 740px;
+  margin: 0 auto;
+}

@@ -1,36 +1,28 @@
 import React, { FC, ReactNode } from "react";
 import Link from "next/link";
 import { LogoLarge } from "../Logo";
+import styles from "./Navbar.module.css";
 
-const Nav: FC<{ className?: string, children: ReactNode; }> = ({ children, className = "" }) => {
-  return (
-    <ul className={`flex items-center h-full ${className}`}>{children}</ul>
-  );
+const Nav: FC<{ children: ReactNode }> = ({ children }) => {
+  return <ul className={styles.nav}>{children}</ul>;
 };
 
-const NavItem: FC<{children: ReactNode;}> = ({ children }) => {
-  return (
-    <li className="px-3 sm:px-4 hover:underline text-base md:text-lg last:pr-0 first:pl-0">
-      {children}
-    </li>
-  );
+const NavItem: FC<{ children: ReactNode }> = ({ children }) => {
+  return <li className={styles.navItem}>{children}</li>;
 };
 
 export const Navbar = () => {
   return (
-    <div className="flex flex-wrap md:flex-no-wrap justify-between md:border-b">
+    <div className={styles.root}>
       {/* Left */}
-      <div className="w-1/2 md:w-64 p-4">
+      <div className={styles.left}>
         <Link href="/">
           <LogoLarge />
         </Link>
       </div>
 
-      {/* Right */}
-      <div className="w-1/2 md:w-64 p-4 text-right md:order-last"></div>
-
       {/* Menu */}
-      <div className="w-full justify-center flex bg-gray-200 md:bg-transparent py-2 px-4">
+      <div className={styles.menu}>
         <Nav>
           <NavItem>
             <Link href="/about">About Me</Link>
@@ -46,6 +38,9 @@ export const Navbar = () => {
           </NavItem>
         </Nav>
       </div>
+
+      {/* Right */}
+      <div className={styles.right}></div>
     </div>
   );
 };

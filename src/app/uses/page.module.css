@@ -1,0 +1,38 @@
+.category {
+  font-size: var(--fontSize-3xl);
+  text-decoration: underline;
+  margin-top: var(--space-20x);
+  margin-bottom: var(--space-10x);
+  font-weight: 400;
+}
+
+.item {
+  margin-bottom: var(--space-6x);
+  display: flex;
+  align-content: start;
+}
+
+.itemIcon {
+  margin-right: var(--space-4x);
+  margin-top: 1px;
+}
+
+.itemBody {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--space);
+}
+
+.itemTitle {
+  font-weight: 500;
+  font-size: var(--fontSize-2xl);
+}
+
+.itemExtra {
+  margin-left: var(--space-2x);
+  color: var(--color-gray-800);
+}
+
+.itemDescription {
+  color: var(--color-gray-800);
+}

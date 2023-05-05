@@ -1,0 +1,25 @@
+.root {
+  margin-bottom: var(--space-12x);
+}
+
+.category {
+  color: var(--color-gray-600);
+  font-size: var(--fontSize-base);
+  text-transform: uppercase;
+  margin-bottom: var(--space);
+}
+
+.title {
+  font-size: var(--fontSize-3xl);
+  font-weight: 500;
+  margin-bottom: var(--space);
+}
+.title:hover {
+  text-decoration: underline;
+}
+
+.description {
+  color: var(--color-gray-600);
+  font-size: var(--fontSize-lg);
+  line-height: var(--lineHeight-lg);
+}

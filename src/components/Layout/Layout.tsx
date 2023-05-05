@@ -1,6 +1,6 @@
 import React, { FC, ReactNode } from "react";
 import { Navbar } from "../Navbar";
-import { Spinner } from "@components/Spinner";
+import styles from "./Layout.module.css";
 interface LayoutProps {
   children: ReactNode;
 }
@@ -8,12 +8,12 @@ interface LayoutProps {
 export const Wrapper: FC<{ children: ReactNode }> = ({ children }) => {
   return (
     <div
-      className={`h-screen`}
+      className={styles.root}
       style={{
         minHeight: "500px",
       }}
     >
-      <div className="h-screen bg-white text-black">{children}</div>
+      <div className={styles.container}>{children}</div>
     </div>
   );
 };
@@ -24,29 +24,13 @@ interface LoadingProps {
   children?: ReactNode;
 }
 
-export const Loading: FC<LoadingProps> = ({ title, children, className }) => {
-  return (
-    <Layout>
-      <Main>
-        <div className="text-center">
-          <Spinner className={className} />
-        </div>
-        {children}
-      </Main>
-    </Layout>
-  );
-};
-
 export const Main: FC<{ className?: string; children: ReactNode }> = ({
   children,
   className = "",
-}) => (
-  <div className={`py-20 px-8 max-w-3xl mx-auto ${className}`}>{children}</div>
-);
+}) => <div className={`${styles.main} ${className}`}>{children}</div>;
 
 interface LayoutComponents {
   Main: typeof Main;
-  Loading: typeof Loading;
 }
 
 const Layout: LayoutComponents & FC<LayoutProps> = ({ children }) => {
@@ -61,6 +45,5 @@ const Layout: LayoutComponents & FC<LayoutProps> = ({ children }) => {
 };
 
 Layout.Main = Main;
-Layout.Loading = Loading;
 
 export default Layout;

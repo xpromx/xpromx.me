@@ -6,6 +6,7 @@ import { NOTION_BLOG_ID } from "../../../constants";
 import "../../../styles/notion.css";
 import "../../../styles/prismjs.css";
 import { Metadata } from "next/types";
+import styles from "./page.module.css";
 interface PageProps {
   params: {
     slug: string;
@@ -34,16 +35,14 @@ export default async function BlogDetail({ params }: PageProps) {
   const { post, block } = await getPostBySlug(params.slug);
 
   if (!post) {
-    return <Layout.Loading />;
+    return <div>...</div>;
   }
 
   return (
     <Layout>
       <Layout.Main>
-        <div className="text-gray-600 text-sm uppercase mb-2">
-          {post.category}
-        </div>
-        <Title className="text-4xl">{post.title}</Title>
+        <div className={styles.root}>{post.category}</div>
+        <Title>{post.title}</Title>
         <div className="blog-post">
           {block && <NotionRenderer blockMap={block as BlockMapType} />}
         </div>

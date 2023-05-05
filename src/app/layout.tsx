@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import "../styles/main.css";
+import "../styles.css";
 import { SITE_DESCRIPTION, SITE_NAME } from "../constants";
 import type { Metadata } from "next";
 

@@ -9,6 +9,7 @@ import { NodeJS } from "./icons/NodeJS";
 import { Php } from "./icons/Php";
 import { ReactIcon } from "./icons/React";
 import { Twitter } from "./icons/Twitter";
+import styles from "./Icon.module.css";
 
 export const icons = {
   darkMode: DarkMode,
@@ -26,23 +27,36 @@ export const icons = {
 export type IconType = keyof typeof icons;
 
 const sizes = {
-  xs: "h-4 w-4",
-  sm: "h-6 w-6",
-  md: "h-8 w-8",
-  lg: "h-12 w-12",
-  xl: "h-16 w-16",
-  custom: "",
+  xs: styles["size--xs"],
+  sm: styles["size--sm"],
+  md: styles["size--md"],
+  lg: styles["size--lg"],
+  xl: styles["size--xl"],
+};
+
+const colors = {
+  nodejs: styles["color--nodejs"],
+  react: styles["color--react"],
+  php: styles["color--php"],
+  css: styles["color--css"],
+  default: styles["color--default"],
 };
 
 export type IconSize = keyof typeof sizes;
-
+export type IconColor = keyof typeof colors;
 interface IconProps {
   icon: IconType;
+  color?: IconColor;
   size?: IconSize;
-  className?: string;
 }
 
-export const Icon: FC<IconProps> = ({ icon, className, size = "md" }) => {
+export const Icon: FC<IconProps> = ({
+  icon,
+  size = "md",
+  color = "default",
+}) => {
   const Component = icons[icon];
-  return <Component className={`${sizes[size]} ${className}`} />;
+  return (
+    <Component className={`${sizes[size]} ${colors[color]} ${styles.root}`} />
+  );
 };
