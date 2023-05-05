@@ -1,5 +1,5 @@
 ## ToDo
 
-- [ ] replace TailwindCSS with CSS modules
+- [x] replace TailwindCSS with CSS modules
 - [ ] improve layout component
 - [ ] FavIcons
